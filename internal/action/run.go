@@ -3,7 +3,6 @@ package action
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 
 	"github.com/hashicorp/go-tfe"
 	"github.com/sethvargo/go-githubactions"
@@ -38,12 +37,6 @@ func Run(inputs Inputs) error {
 	if err != nil {
 		return err
 	}
-
-	fmt.Println("from state version")
-	for _, ov := range stateVersion.Outputs {
-		fmt.Println(ov.Name)
-	}
-	fmt.Println("end")
 
 	outputs, err := client.StateVersions.Outputs(ctx, stateVersion.ID, tfe.StateVersionOutputsListOptions{
 		ListOptions: tfe.ListOptions{
