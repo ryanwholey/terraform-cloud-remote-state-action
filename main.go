@@ -8,7 +8,7 @@ import (
 func main() {
 	if err := action.Run(action.Inputs{
 		Token:        githubactions.GetInput("token"),
-		Hostname:     githubactions.GetInput("hostname"),
+		Address:      githubactions.GetInput("address"),
 		Workspace:    githubactions.GetInput("workspace"),
 		Organization: githubactions.GetInput("organization"),
 	}); err != nil {

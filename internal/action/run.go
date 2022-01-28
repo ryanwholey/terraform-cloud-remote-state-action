@@ -11,7 +11,7 @@ import (
 
 type Inputs struct {
 	Token        string
-	Hostname     string
+	Address      string
 	Workspace    string
 	Organization string
 }
@@ -23,7 +23,7 @@ func Run(inputs Inputs) error {
 
 	client, err := tfe.NewClient(&tfe.Config{
 		Token:   inputs.Token,
-		Address: inputs.Hostname,
+		Address: inputs.Address,
 	})
 	if err != nil {
 		return err

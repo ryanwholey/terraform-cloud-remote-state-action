@@ -7,10 +7,10 @@ inputs:
   organization:
     description: Organization
     required: true
-  hostname:
+  address:
     required: false
-    description: Hostname
-    default: app.terraform.io
+    description: Terraform Cloud address
+    default: https://app.terraform.io
   token:
     required: true
     description: Terraform cloud token
