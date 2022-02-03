@@ -1,6 +1,7 @@
 package action
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 
@@ -57,7 +58,13 @@ func Run(inputs Inputs) error {
 		return err
 	}
 
-	str := string(b)
+	var buff bytes.Buffer
+	if err := json.Compact(&buff, b); err != nil {
+		return err
+	}
+
+	str := buff.String()
+
 	githubactions.AddMask(str)
 	githubactions.SetOutput("output", str)
 
