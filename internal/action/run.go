@@ -78,7 +78,7 @@ func Run(inputs Inputs) error {
 
 	str := buff.String()
 
-	// githubactions.AddMask(str)
+	githubactions.AddMask(str)
 	githubactions.SetOutput("output", str)
 
 	return nil
