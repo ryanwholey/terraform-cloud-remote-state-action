@@ -1,3 +1,5 @@
+github.com/bendrucker/go-githubactions-inputs v0.0.0-20210818173117-8670cf65b919 h1:BNAAVc8SWG3BKEcKhR6mdV9xj0HJ8XYRWFk9EqhkAaM=
+github.com/bendrucker/go-githubactions-inputs v0.0.0-20210818173117-8670cf65b919/go.mod h1:y+z+J6MVMqVb7OPWI8D/fVwmsgyDhbrmQHYCPqt0vJE=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -23,6 +25,7 @@ github.com/hashicorp/jsonapi v0.0.0-20210826224640-ee7dae0fb22d h1:9ARUJJ1VVynB1
 github.com/hashicorp/jsonapi v0.0.0-20210826224640-ee7dae0fb22d/go.mod h1:Yog5+CPEM3c99L1CL2CFCYoSzgWm5vTU58idbRUaLik=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/sethvargo/go-githubactions v0.4.0/go.mod h1:ugCoIFQjs7HxIwwYiY7ty6H9T+7Z4ey481HxqA3VRKE=
 github.com/sethvargo/go-githubactions v0.5.1 h1:RM0NqTbzpQr9gboyEskB2MY6O0ZPaxJPVAIY6Ku5sNQ=
 github.com/sethvargo/go-githubactions v0.5.1/go.mod h1:ugCoIFQjs7HxIwwYiY7ty6H9T+7Z4ey481HxqA3VRKE=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

@@ -17,6 +17,10 @@ inputs:
   target: 
     required: false
     description: The output key to target
+  sensitive:
+    required: false
+    description: Whether to mask the action output
+    default: "true"
 outputs:
   output:
     description: JSON workspace outputs
