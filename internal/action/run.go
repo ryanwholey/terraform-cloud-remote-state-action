@@ -14,6 +14,7 @@ type Inputs struct {
 	Address      string
 	Workspace    string
 	Organization string
+	Target       string
 }
 
 const maxPageSize int = 100
@@ -53,7 +54,14 @@ func Run(inputs Inputs) error {
 		outputsMap[o.Name] = o
 	}
 
-	b, err := json.Marshal(outputsMap)
+	var i interface{}
+	if inputs.Target != "" {
+		i = outputsMap[inputs.Target]
+	} else {
+		i = outputsMap
+	}
+
+	b, err := json.Marshal(i)
 	if err != nil {
 		return err
 	}
@@ -65,7 +73,7 @@ func Run(inputs Inputs) error {
 
 	str := buff.String()
 
-	githubactions.AddMask(str)
+	// githubactions.AddMask(str)
 	githubactions.SetOutput("output", str)
 
 	return nil
