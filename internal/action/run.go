@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
+	"log"
 
 	"github.com/hashicorp/go-tfe"
 	"github.com/sethvargo/go-githubactions"
@@ -56,10 +58,16 @@ func Run(inputs Inputs) error {
 
 	var i interface{}
 	if inputs.Target != "" {
-		i = outputsMap[inputs.Target]
+		target, ok := outputsMap[inputs.Target]
+		if !ok {
+			return fmt.Errorf("%s was not found in outputs", inputs.Target)
+		}
+		i = target
 	} else {
 		i = outputsMap
 	}
+
+	log.Println(i)
 
 	b, err := json.Marshal(i)
 	if err != nil {
