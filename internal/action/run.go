@@ -76,7 +76,7 @@ func Run(inputs Inputs) error {
 	fmt.Println("should set sensitive", inputs.Sensitive)
 	if inputs.Sensitive {
 		fmt.Println("setting sensitive")
-		githubactions.AddMask(str)
+		// githubactions.AddMask(str)
 	}
 
 	githubactions.SetOutput("output", str)
