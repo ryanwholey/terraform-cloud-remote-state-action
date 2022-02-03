@@ -57,7 +57,9 @@ func Run(inputs Inputs) error {
 		return err
 	}
 
-	githubactions.SetOutput("output", string(b))
+	str := string(b)
+	githubactions.AddMask(str)
+	githubactions.SetOutput("output", str)
 
 	return nil
 }
