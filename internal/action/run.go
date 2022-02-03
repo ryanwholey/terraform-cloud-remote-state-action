@@ -70,12 +70,6 @@ func Run(inputs Inputs) error {
 		return err
 	}
 
-	// var buff bytes.Buffer
-	// if err := json.Compact(&buff, b); err != nil {
-	// 	return err
-	// }
-
-	// str := buff.String()
 	str := string(b)
 
 	githubactions.AddMask(str)
