@@ -15,7 +15,6 @@ type Inputs struct {
 	Workspace    string
 	Organization string
 	Target       string
-	Sensitive    bool
 }
 
 const maxPageSize int = 100
@@ -73,12 +72,7 @@ func Run(inputs Inputs) error {
 
 	str := string(b)
 
-	fmt.Println("should set sensitive", inputs.Sensitive)
-	if inputs.Sensitive {
-		fmt.Println("setting sensitive")
-		// githubactions.AddMask(str)
-	}
-
+	githubactions.AddMask(str)
 	githubactions.SetOutput("output", str)
 
 	return nil
