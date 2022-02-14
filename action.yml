@@ -17,6 +17,14 @@ inputs:
   target: 
     required: false
     description: The output key to target
+  sensitive:
+    description: Whether to mask the fetched remote state
+    required: false
+    default: "true"
+  debug:
+    description: Whether to log debugging information
+    required: false
+    default: "false"
 outputs:
   output:
     description: JSON workspace outputs

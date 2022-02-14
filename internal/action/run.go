@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 
 	"github.com/hashicorp/go-tfe"
 	"github.com/sethvargo/go-githubactions"
@@ -15,6 +16,8 @@ type Inputs struct {
 	Workspace    string
 	Organization string
 	Target       string
+	Sensitive    bool
+	Debug        bool
 }
 
 const maxPageSize int = 100
@@ -72,7 +75,14 @@ func Run(inputs Inputs) error {
 
 	str := string(b)
 
-	githubactions.AddMask(str)
+	if inputs.Debug {
+		log.Println(str)
+	}
+
+	if inputs.Sensitive {
+		githubactions.AddMask(str)
+	}
+
 	githubactions.SetOutput("output", str)
 
 	return nil
